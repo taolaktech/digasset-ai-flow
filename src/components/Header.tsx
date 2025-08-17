@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import digassetLogo from "@/assets/digasset-logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,10 +24,12 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">D</span>
-            </div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src={digassetLogo} 
+              alt="Digasset Logo" 
+              className="w-10 h-10 object-contain"
+            />
             <span className="text-xl font-bold text-foreground">Digasset</span>
           </Link>
 
