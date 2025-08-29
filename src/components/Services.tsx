@@ -74,9 +74,6 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full group-hover:border-primary/50">
-                  Learn More
-                </Button>
               </CardContent>
             </Card>
           ))}
