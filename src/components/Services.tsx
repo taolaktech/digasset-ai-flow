@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Bot, Workflow, Settings, BarChart3, MessageSquare, FileText } from "lucide-react";
 
 const Services = () => {
+  const handleBookConsultation = () => {
+    // Replace with your actual Calendly URL
+    const calendlyUrl = "https://calendly.com/your-username/consultation";
+    window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
+  };
+
   const services = [
     {
       icon: Bot,
@@ -80,7 +86,7 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={handleBookConsultation}>
             Get Free AI Consultation
           </Button>
         </div>
