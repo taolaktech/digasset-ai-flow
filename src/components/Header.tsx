@@ -8,6 +8,11 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
+  const handleBookConsultation = () => {
+    const calendlyUrl = "https://calendly.com/contact-digasset/30min";
+    window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
+  };
+
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Services", href: "#services" },
@@ -48,7 +53,7 @@ const Header = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleBookConsultation}>
               Get Consultation
             </Button>
             <Button variant="cta" size="sm">
@@ -84,7 +89,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" onClick={handleBookConsultation}>
                   Get Consultation
                 </Button>
                 <Button variant="cta" size="sm">
