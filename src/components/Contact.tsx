@@ -6,6 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
 
 const Contact = () => {
+  const handleBookConsultation = () => {
+    const calendlyUrl = "https://calendly.com/contact-digasset/30min";
+    window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
+  };
   return (
     <section id="contact" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-6">
@@ -68,7 +72,7 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="hero" className="w-full">
+                <Button variant="hero" className="w-full" onClick={handleBookConsultation}>
                   Book Free Consultation
                 </Button>
               </CardContent>
