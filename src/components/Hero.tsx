@@ -25,7 +25,7 @@ const Hero = () => {
           
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-foreground">Digasset Builds</span>
+            <span className="text-foreground">Build</span>
             <br />
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Custom AI Agents
