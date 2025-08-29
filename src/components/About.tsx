@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Trophy, Lightbulb } from "lucide-react";
 
 const About = () => {
+   const handleBookConsultation = () => {
+    const calendlyUrl = "https://calendly.com/contact-digasset/30min";
+    window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
+  };
+  
   const achievements = [
     "200+ AI agents deployed in production",
     "90% average cost reduction for clients",
@@ -60,7 +65,7 @@ const About = () => {
               ))}
             </div>
 
-            <Button variant="hero" size="lg">
+            <Button variant="hero" size="lg" onClick={handleBookConsultation}>
               Start Your AI Journey
             </Button>
           </div>

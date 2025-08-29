@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 mb-8 bg-primary/10 border border-primary/20 rounded-full">
+          <div className="mt-4 inline-flex items-center px-4 py-2 mb-8 bg-primary/10 border border-primary/20 rounded-full">
             <Zap className="w-4 h-4 mr-2 text-primary" />
             <span className="text-sm font-medium text-primary">Leading AI Automation Agency</span>
           </div>
@@ -45,9 +45,9 @@ const Hero = () => {
               Get Free AI Consultation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="lg">
+            {/* <Button variant="outline" size="lg">
               View Our AI Agents
-            </Button>
+            </Button> */}
           </div>
           
           {/* Stats */}

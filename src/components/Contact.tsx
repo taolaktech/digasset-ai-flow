@@ -3,15 +3,28 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import { Mail, Phone, MessageSquare } from "lucide-react";
+import { useForm } from "@formspree/react";
+import { useRef } from "react";
 
 const Contact = () => {
   const handleBookConsultation = () => {
     const calendlyUrl = "https://calendly.com/contact-digasset/30min";
     window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
   };
+  const [state, handleSubmit] = useForm("xvgbkped"); // from Formspree dashboard
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+const onSubmit = async (e) => {
+  await handleSubmit(e);
+  if (state.succeeded) {
+      formRef.current.reset();
+    }
+};
+
   return (
-    <section id="contact" className="py-20 bg-secondary/50">
+    
+<section id="contact" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -78,59 +91,61 @@ const Contact = () => {
               </CardContent>
             </Card>
           </div>
+<form ref={formRef} onSubmit={onSubmit} method="POST">
+  <Card className="bg-card border-border">
+    <CardHeader>
+      <CardTitle className="text-2xl font-semibold text-foreground">
+        Send us a message
+      </CardTitle>
+      <CardDescription className="text-muted-foreground">
+        Tell us about your project and we'll get back to you within 24 hours.
+      </CardDescription>
+    </CardHeader>
+    <CardContent className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label htmlFor="firstName">First Name</Label>
+          <Input id="firstName" name="firstName" placeholder="John" />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="lastName">Last Name</Label>
+          <Input id="lastName" name="lastName" placeholder="Doe" />
+        </div>
+      </div>
 
-          {/* Contact Form */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-foreground">Send us a message</CardTitle>
-              <CardDescription className="text-muted-foreground">
-                Tell us about your project and we'll get back to you within 24 hours.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input id="firstName" placeholder="John" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" placeholder="Doe" />
-                </div>
-              </div>
+      <div className="space-y-2">
+        <Label htmlFor="email">Email</Label>
+        <Input id="email" name="email" type="email" placeholder="john@company.com" />
+      </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john@company.com" />
-              </div>
+      <div className="space-y-2">
+        <Label htmlFor="company">Company</Label>
+        <Input id="company" name="company" placeholder="Your Company" />
+      </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="company">Company</Label>
-                <Input id="company" placeholder="Your Company" />
-              </div>
+      <div className="space-y-2">
+        <Label htmlFor="message">Message</Label>
+        <Textarea 
+          id="message"
+          name="message"
+          placeholder="Tell us about your project, current workflows, and automation goals..."
+          className="min-h-[120px]"
+        />
+      </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" placeholder="AI Automation Consultation" />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Tell us about your project, current workflows, and automation goals..."
-                  className="min-h-[120px]"
-                />
-              </div>
-
-              <Button variant="cta" className="w-full">
-                Send Message
-              </Button>
-            </CardContent>
-          </Card>
+      <Button disabled={state.submitting} type="submit" variant="cta" className="w-full">
+        Send Message
+      </Button>
+      {state.succeeded && (
+        <p className="text-green-600 text-center">✅ Thanks! We’ll be in touch soon.</p>
+      )}
+    </CardContent>
+  </Card>
+</form>   
         </div>
       </div>
     </section>
+    
   );
 };
 

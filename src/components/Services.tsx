@@ -13,7 +13,7 @@ const Services = () => {
       icon: Bot,
       title: "Custom AI Agents",
       description: "Tailored AI agents designed specifically for your business workflows and requirements.",
-      features: ["Customer Service Automation", "Lead Qualification", "Data Processing", "Content Generation"]
+      features: ["Customer Service Automation", "Lead Qualification", "Data Processing", "Content Generation & Social media automation"]
     },
     {
       icon: Workflow,
@@ -25,7 +25,7 @@ const Services = () => {
       icon: Settings,
       title: "AI Implementation",
       description: "Complete AI solution deployment with training, support, and ongoing maintenance.",
-      features: ["System Integration", "Team Training", "24/7 Support", "Regular Updates"]
+      features: ["Private AI System Deployment", "Team Training", "24/7 Support", "Regular Updates"]
     },
     {
       icon: BarChart3,
@@ -55,8 +55,8 @@ const Services = () => {
             Automate Workflows in <span className="bg-gradient-primary bg-clip-text text-transparent">Weeks Not Quarters</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Since 2023, Digasset has built and reviewed hundreds of custom AI Agents for startups and Fortune 500s. 
-            We help clients quickly prototype and productionize AI Agents that are safe and provide a positive ROI.
+            Since 2023, Digasset has built and reviewed hundreds of custom AI Agents for startups and busines owners. 
+            We help clients quickly prototype and privately deployed AI Agents that are tailored to their needs and provide a positive ROI.
           </p>
         </div>
 
