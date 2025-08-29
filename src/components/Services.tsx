@@ -4,8 +4,7 @@ import { Bot, Workflow, Settings, BarChart3, MessageSquare, FileText } from "luc
 
 const Services = () => {
   const handleBookConsultation = () => {
-    // Replace with your actual Calendly URL
-    const calendlyUrl = "https://calendly.com/your-username/consultation";
+    const calendlyUrl = "https://calendly.com/contact-digasset/30min";
     window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
   };
 
